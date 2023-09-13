@@ -1,4 +1,5 @@
 var vid = document.querySelector("#videoElement");
+const errorField = document.getElementById("errorField");
 
 // Set constraints for the video element, including setting the FPS to 55-60
 const constraints = {
@@ -13,7 +14,7 @@ const constraints = {
 };
 
 // Set the video element to the camera
-function(dosomethingidk) {
+function streamFunc() {
   if (navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices
       .getUserMedia(constraints)
@@ -25,3 +26,4 @@ function(dosomethingidk) {
       });
   }
 }
+streamFunc();
