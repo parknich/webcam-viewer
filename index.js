@@ -42,10 +42,10 @@ selectBox.onchange = async () => {
 };
 
 submitButton.onclick = function pee() {
-  vid.style.width = resWidth;
-  vid.style.height = resHeight;
-  wrapper.style.width = resWidth;
-  wrapper.style.height = resHeight;
+  vid.style.width = 1280;
+  vid.style.height = 720;
+  wrapper.style.width = 1280;
+  wrapper.style.height = 720;
   streamFunc();
 };
 
@@ -59,8 +59,8 @@ function streamFunc() {
       audio: true,
       controls: true,
       autoplay: true,
-      height: { min: resHeight, max: resHeight},
-      width: { min: resWidth, max: resWidth},
+      height: { min: 720, max: 720},
+      width: { min: 1280, max: 1280},
       frameRate: { ideal: resMinFps, max: resMaxFps },
     },
   };
