@@ -7,7 +7,7 @@ let resWidth;
 let resHeight;
 let resMinFps;
 let resMaxFps;
-let res = (selectBox.onchange = async () => {
+selectBox.onchange = async () => {
   res = selectBox.value;
   switch (res) {
     case 0:
@@ -34,21 +34,18 @@ let res = (selectBox.onchange = async () => {
       resMinFps = 25;
       resMaxFps = 30;
       break;
-  
+
     default:
       console.error("WebCamViewer: Unknown Error");
       break;
   }
-  
-});
+};
 
-submitButton.onchange = async () => {
+submitButton.onclick = async () => {
   streamFunc();
-}
-
+};
 
 // Set constraints for the video element, including setting the FPS to 55-60
-
 
 // Set the video element to the camera
 function streamFunc() {
@@ -61,7 +58,7 @@ function streamFunc() {
       frameRate: { ideal: resMinFps, max: resMaxFps },
     },
   };
-  
+
   if (navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices
       .getUserMedia(constraints)
