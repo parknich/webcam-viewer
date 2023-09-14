@@ -43,6 +43,10 @@ selectBox.onchange = async () => {
 
 submitButton.onclick = async () => {
   streamFunc();
+  vid.style.width = resWidth;
+  vid.style.height = resHeight;
+  wrapper.style.width = resWidth;
+  wrapper.style.height = resHeight;
 };
 
 // Set constraints for the video element, including setting the FPS to 55-60
