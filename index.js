@@ -59,8 +59,8 @@ function streamFunc() {
       audio: true,
       controls: true,
       autoplay: true,
-      height: resHeight,
-      width: resWidth,
+      height: { min: resHeight, max: resHeight},
+      width: { min: resWidth, max: resWidth},
       frameRate: { ideal: resMinFps, max: resMaxFps },
     },
   };
