@@ -1,4 +1,4 @@
-var vid = document.querySelector("#videoElement");
+var vid = document.getElementById("videoElement");
 const wrapper = document.getElementById("wrapper");
 const errorField = document.getElementById("errorField");
 const selectBox = document.getElementById("selectBox");
