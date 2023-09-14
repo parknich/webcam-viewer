@@ -54,15 +54,15 @@ submitButton.onclick = function pee() {
 // Set the video element to the camera
 function streamFunc() {
   const constraints = {
-
+    audio: true,
+    video: {
       video: true,
-      audio: true,
       controls: true,
       autoplay: true,
-      height: { min: 720, max: 720},
-      width: { min: 1280, max: 1280},
+      height: { min: 720, max: 720 },
+      width: { min: 1280, max: 1280 },
       frameRate: { ideal: 55, max: 60 },
-
+    },
   };
 
   if (navigator.mediaDevices.getUserMedia) {
