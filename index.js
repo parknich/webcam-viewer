@@ -7,7 +7,7 @@ let resWidth;
 let resHeight;
 let resMinFps;
 let resMaxFps;
-let res = (submitButton.onclick = async () => {
+let res = (selectBox.onchange = async () => {
   res = selectBox.value;
   switch (res) {
     case 0:
@@ -42,6 +42,10 @@ let res = (submitButton.onclick = async () => {
   
 });
 
+submitButton.onchange = async () => {
+  streamFunc();
+}
+
 
 // Set constraints for the video element, including setting the FPS to 55-60
 
@@ -57,14 +61,11 @@ function streamFunc() {
       frameRate: { ideal: resMinFps, max: resMaxFps },
     },
   };
+  
   if (navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices
       .getUserMedia(constraints)
       .then(function (stream) {
-        vid.style.width = resWidth
-        vid.style.height = resHeight
-        wrapper.style.width = resWidth;
-        wrapper.style.height = resHeight;
         vid.srcObject = stream;
       })
       .catch(function (err0r) {
