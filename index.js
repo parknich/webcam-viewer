@@ -61,7 +61,7 @@ function streamFunc() {
       autoplay: true,
       height: { min: 720, max: 720},
       width: { min: 1280, max: 1280},
-      frameRate: { ideal: resMinFps, max: resMaxFps },
+      frameRate: { ideal: 55, max: 60 },
 
   };
 
